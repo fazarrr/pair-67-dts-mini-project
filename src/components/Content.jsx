@@ -7,7 +7,6 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { CardActionArea } from "@mui/material";
-import ReactPlayer from "react-player";
 
 const Content = () => {
   const baseUrlForMovie = "https://image.tmdb.org/t/p/w200";

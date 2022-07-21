@@ -1,14 +1,13 @@
 import axios from "axios";
 
-// Di sini kita membuat instance dari axios
-const Tmdb = axios.create({
-  baseURL: "https://api.themoviedb.org/3",
-  // baseURL: "https://api.themoviedb.org/3/movie/550?api_key=e4bc0792414aae7b077105294c19d955",
+const baseUrl = "https://api.themoviedb.org/3/";
+const { REACT_APP_TMDB_API_KEY } = process.env;
+
+const tmdb = axios.create({
+  baseURL: baseUrl,
   params: {
-    // TODO: Jangan lupa masukkan API_KEY yang benarnya di sini yah !
-    api_key: "e4bc0792414aae7b077105294c19d955",
+    api_key: REACT_APP_TMDB_API_KEY,
   },
 });
 
-// Jangan lupa diexport karena akan digunakan di tempat lainnya
-export default Tmdb;
+export default tmdb;

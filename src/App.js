@@ -1,32 +1,112 @@
-// import logo from './logo.svg';
-// import './App.css';
-// import Grid from '@mui/material/Grid';
-import TopAppBar from "./components/TopAppBar";
-import Content from "./components/Content";
-import BottomAppBar from "./components/BottomAppBar";
+import "./App.css";
+import { DetailMovie } from "./containers/DetailMovie";
+import { Homepage } from "./containers/HomePage";
+import { Route, Routes } from "react-router-dom";
 
-function App() {
+import { ThemeProvider } from "@mui/material";
+import ProtectedRoute from "./components/ProtectedRoute";
+
+import Navbar from "./components/Navbar/Index";
+import theme from "./themes/Theme";
+import Footer from "./components/Footer";
+import Login from "./containers/Login";
+import Register from "./containers/Register";
+import { DetailTv } from "./containers/DetailTv";
+const App = () => {
   return (
-    <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      <TopAppBar />
-      <Content />
-      <BottomAppBar />
-    </div>
+    <>
+      <ThemeProvider theme={theme}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Navbar />
+                <Homepage />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/movies"
+            element={
+              <>
+                <Navbar />
+                <Homepage />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/series"
+            element={
+              <>
+                <Navbar />
+                <Homepage />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/newandpopular"
+            element={
+              <>
+                <Navbar />
+                <Homepage />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/mylist"
+            element={
+              <>
+                <Navbar />
+                <Homepage />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <ProtectedRoute loginOnly={false}>
+                <Login />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="register"
+            element={
+              <ProtectedRoute loginOnly={false}>
+                <Register />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/movie/:id"
+            element={
+              <ProtectedRoute>
+                <Navbar />
+                <DetailMovie />
+                <Footer />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/tv/:id"
+            element={
+              <ProtectedRoute>
+                <Navbar />
+                <DetailTv />
+                <Footer />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </ThemeProvider>
+    </>
   );
-}
+};
 
 export default App;
