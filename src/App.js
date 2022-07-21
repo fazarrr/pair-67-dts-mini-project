@@ -1,10 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
+// import Grid from '@mui/material/Grid';
+import TopAppBar from "./components/TopAppBar";
+import Content from "./components/Content";
+import BottomAppBar from "./components/BottomAppBar";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,7 +21,10 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+      <TopAppBar />
+      <Content />
+      <BottomAppBar />
     </div>
   );
 }
