@@ -23,6 +23,7 @@ const Content = () => {
         );
 
         // Jangan lupa set statenya
+        // Jangan lupa set statenya
         // Perhatikan di sini responseDariTMDB ada .data (response schema axios)
         setContents(responseDariTMDB.data.results);
       } catch (err) {
