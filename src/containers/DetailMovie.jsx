@@ -26,7 +26,7 @@ export const DetailMovie = () => {
     };
 
     fetchMovie();
-  }, [idMovie]);
+  }, [movie.number_of_season, idMovie]);
 
   useEffect(() => {
     const fetchMovies = async () => {
