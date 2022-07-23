@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { landscape, portrait } from "../components/DummyData";
+// import { landscape, portrait } from "../components/DummyData";
 import { MovieCarousel } from "../components/MovieCarousel";
 import MovieSlider from "../components/MovieSlider";
 import tmdb from "../apis/Tmdb";
