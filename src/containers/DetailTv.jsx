@@ -41,7 +41,7 @@ export const DetailTv = () => {
     console.log(popular);
 
     fetchMovies();
-  }, []);
+  }, [popular]);
 
   return (
     <>

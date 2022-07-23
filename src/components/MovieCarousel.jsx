@@ -50,7 +50,7 @@ class CustomSlide extends Component {
 
     function getGenres(genres, id) {
       const filtered = genres.filter((e) => {
-        return e.id == id;
+        return e.id === id;
       });
 
       return filtered[0]?.name;
